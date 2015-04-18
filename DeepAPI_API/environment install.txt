@@ -1,0 +1,27 @@
+#install python
+#install pip
+
+python -V
+pip install django
+django-admin --version
+
+pip install djangorestframework
+pip install markdown       # Markdown support for the browsable API.
+pip install django-filter  # Filtering support
+
+#creates django project
+django-admin.py startproject DeepAPIproj
+cd DeepAPIproj
+django-admin.py startapp DeepAPIapp
+
+# setup database
+python manage.py migrate
+
+#create an initial user named admin with a password of password
+python manage.py createsuperuser
+#admin cutco
+
+
+#running the server
+python manage.py runserver
+
