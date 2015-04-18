@@ -1,4 +1,6 @@
+- download model of caffe
 -GET PYTHON API working locally on linux
 -install and push python api to AWS
 -write simple rest connector
 -add webpage using rest connector
+
