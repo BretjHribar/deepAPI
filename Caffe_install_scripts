@@ -1,0 +1,63 @@
+
+tar -xvf ILSVRC2012_img_train.tar -C val/
+
+tar -xvf /media/bret/Data/ImageNet/ILSVRC2012_img_train.tar -C /home/bret/ImageNetData/train/
+
+
+export PYTHONPATH=/home/caffe/python:$PYTHONPATH 
+
+sudo apt-get install protobuf-compiler
+
+sudo apt-get install libprotobuf-dev
+
+sudo apt-get install libboost-all-dev
+
+
+wget https://github.com/schuhschuh/gflags/archive/master.zip
+unzip master.zip
+cd gflags-master
+mkdir build && cd build
+export CXXFLAGS="-fPIC" && cmake .. && make VERBOSE=1
+make 
+sudo make install
+
+sudo apt-get install libgoogle-glog-dev
+
+sudo apt-get install libhdf5-serial-dev
+
+sudo apt-get install git-core libsnappy-dev
+
+git clone https://code.google.com/p/leveldb/
+cd leveldb
+make
+
+
+#in shell script #
+
+#!/bin/sh
+cp --preserve=links libleveldb.* /usr/local/lib
+cp -r include/leveldb /usr/local/include/
+ldconfig
+
+apt-get install libffi-dev python-dev build-essential.
+pip install lmdb
+
+apt-get install liblmdb-dev
+
+export LD_LIBRARY_PATH=/usr/local/cuda-6.5/lib64
+
+make all
+make test
+make runtest
+
+./data/ilsvrc12/get_ilsvrc_aux.sh
+
+#examples/imagenet/create_imagenet.sh
+
+./examples/imagenet/make_imagenet_mean.sh
+
+
+./build/tools/caffe train --solver=models/bvlc_reference_caffenet/solver.prototxt
+
+#nvidia-smi
+
