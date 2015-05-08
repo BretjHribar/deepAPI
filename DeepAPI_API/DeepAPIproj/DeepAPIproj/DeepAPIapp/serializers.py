@@ -14,4 +14,4 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('url', 'name')
 
 class ImageClassifySerializer(serializers.Serializer):
-    model_input = serializers.CharField()
+    image_url = serializers.CharField()
